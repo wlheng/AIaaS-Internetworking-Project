@@ -18,3 +18,8 @@ EAST Text Detector,
 Mask R-CNN,
 Age Detection,
 Activity Recognition
+
+Model Files, Sample images, Sample Videos:
+
+https://drive.google.com/drive/folders/1zl8aYYsqJ6c5tphWCLqqtUaWb_d9kbtp?usp=sharing
+
