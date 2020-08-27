@@ -5,6 +5,7 @@ images/
 received_images/
 output_images/
 output_videos/
+.DS_Store
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
