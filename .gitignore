@@ -1,3 +1,11 @@
+#Large data files
+models/
+videos/
+images/
+received_images/
+output_images/
+output_videos/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
