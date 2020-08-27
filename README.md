@@ -16,5 +16,5 @@ Deep Learning Model:
 Neural Style Transfer,
 EAST Text Detector,
 Mask R-CNN,
-Age Detection
+Age Detection,
 Activity Recognition
