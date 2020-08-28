@@ -18,10 +18,12 @@ EAST Text Detector,
 Mask R-CNN,
 Age Detection,
 Activity Recognition
-Handwriting Recognition
+Handwriting Recognition (OCR),
+Blur Detection,
+Blur and anonymise face
 
 Requirement:
-pip install tensorflow,
+pip install tensorflow (for OCR),
 pip install imutils,
 pip install flask
 

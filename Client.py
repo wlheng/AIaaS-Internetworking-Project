@@ -26,7 +26,10 @@ ap.add_argument("-t", "--threshold", type=float, default=0.3, required=False,
 ap.add_argument("-f", "--face", default='models/face_detector', required=False,
 	help="path to face detector model directory")
 ap.add_argument("-a", "--age", default='models/age_detector', required=False,
-	help="path to age detector model directory")              
+	help="path to age detector model directory")
+ap.add_argument("-met", "--method", type=str, default="simple",
+	choices=["simple", "pixelated"], 
+    help="face blurring/anonymizing method") 
 args = vars(ap.parse_args())
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -34,10 +37,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 if __name__ == "__main__":
     url = "http://127.0.0.1:5000" #if you test C/S in the same machine
     # url = "http://138.25.63.194:5000" #different machine, set server ip here
-    #while True:
-        # input_content = input('input image file here, cat.jpg") ')
-        # if input_content.strip() == "":
-        #     input_content = 'cat.jpg'
+
     option = int(args['option'])
     input_content = args['image']
     model = args['model']
@@ -50,6 +50,7 @@ if __name__ == "__main__":
     threshold = args['threshold']
     face = args['face']
     age = args['age']
+    method = args['method']
     if input_content.strip() == "-1":
         print('Wrong image')
     elif not os.path.exists(input_content.strip()):
@@ -74,7 +75,8 @@ if __name__ == "__main__":
             'visualize': visualize,
             'threshold': threshold,
             'face': face,
-            'age': age
+            'age': age,
+            'method': method
         }       
         #testing
         result = requests.post(url, files=file_dict, data=values)
