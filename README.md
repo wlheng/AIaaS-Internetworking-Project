@@ -21,8 +21,8 @@ Activity Recognition
 Handwriting Recognition
 
 Requirement:
-pip install tensorflow
-pip install imutils
+pip install tensorflow,
+pip install imutils,
 pip install flask
 
 Model Files, Sample images, Sample Videos:
