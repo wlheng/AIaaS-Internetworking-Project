@@ -18,6 +18,12 @@ EAST Text Detector,
 Mask R-CNN,
 Age Detection,
 Activity Recognition
+Handwriting Recognition
+
+Requirement:
+pip install tensorflow
+pip install imutils
+pip install flask
 
 Model Files, Sample images, Sample Videos:
 
