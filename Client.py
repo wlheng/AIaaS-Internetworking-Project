@@ -35,8 +35,8 @@ args = vars(ap.parse_args())
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 if __name__ == "__main__":
-    url = "http://127.0.0.1:5000" #if you test C/S in the same machine
-    # url = "http://138.25.63.194:5000" #different machine, set server ip here
+    # url = "http://127.0.0.1:5000" #if you test C/S in the same machine
+    url = "http://3.128.198.35:5000" #different machine, set server ip here
 
     option = int(args['option'])
     input_content = args['image']

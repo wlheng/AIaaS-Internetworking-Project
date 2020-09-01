@@ -59,7 +59,7 @@ def process_file(received_file):
     print(imageFilePath)
     return  imageFileName, imageFilePath, startTime
 
-#define callback function to recive /post request, and reply with result
+#define callback function to receive /post request, and reply with result
 @app.route("/", methods=['POST'])
 def return_result():
     option = int(request.values['option'])
