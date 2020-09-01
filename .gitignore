@@ -6,6 +6,7 @@ received_images/
 output_images/
 output_videos/
 .DS_Store
+server-client-test.pem
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
