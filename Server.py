@@ -6,7 +6,7 @@ from EAST_textDetector import detect_text
 from age_detection import detect_age
 from neural_style_transfer import apply_style
 from activity_recognition import activity_recognition
-from Handwriting_Recognition import handwriting_recognition
+# from Handwriting_Recognition import handwriting_recognition
 from blur_detection import detect_blur
 from blur_face import blur_face
 from imutils import paths
@@ -162,25 +162,25 @@ def return_result():
         else:
             return '[INFO] Option 5 process failed'
     
-    #Option 6. Handwriting Recognition
-    elif option == 6:
-        print('[INFO] This is option 6. Handwriting Recognition')
-        received_file = request.files['file']
-        if received_file:
-            imageFileName, imageFilePath, startTime = process_file(received_file)
-            #main function goes here
-            output, process_start, process_end = handwriting_recognition(imageFilePath)
-            output_image(option, imageFileName, output)  
-            usedTime = time.time() - startTime
-            print('Server process completed, time:%.2f second' % usedTime)
-            result = 'Server process completed, time:%.2f second' % usedTime
-            return result
-        else:
-            return '[INFO] Option 6 process failed'
+    # #Option 6. Handwriting Recognition
+    # elif option == 6:
+    #     print('[INFO] This is option 6. Handwriting Recognition')
+    #     received_file = request.files['file']
+    #     if received_file:
+    #         imageFileName, imageFilePath, startTime = process_file(received_file)
+    #         #main function goes here
+    #         output, process_start, process_end = handwriting_recognition(imageFilePath)
+    #         output_image(option, imageFileName, output)  
+    #         usedTime = time.time() - startTime
+    #         print('Server process completed, time:%.2f second' % usedTime)
+    #         result = 'Server process completed, time:%.2f second' % usedTime
+    #         return result
+    #     else:
+    #         return '[INFO] Option 6 process failed'
 
-    #Option 7. Blur detection
-    elif option == 7:
-        print('[INFO] This is option 7. Blur detection')
+    #Option 6. Blur detection
+    elif option == 6:
+        print('[INFO] This is option 6. Blur detection')
         received_file = request.files['file']
         if received_file:
             imageFileName, imageFilePath, startTime = process_file(received_file)
@@ -191,11 +191,11 @@ def return_result():
             result = 'Server process completed, time:%.2f second' % usedTime
             return result
         else:
-            return '[INFO] Option 7 process failed'
+            return '[INFO] Option 6 process failed'
 
-    #Option 8. Blur face
-    elif option == 8:
-        print('[INFO] This is option 8. Blur face')
+    #Option 7. Blur face
+    elif option == 7:
+        print('[INFO] This is option 7. Blur face')
         received_file = request.files['file']
         if received_file:
             imageFileName, imageFilePath, startTime = process_file(received_file)
@@ -209,7 +209,7 @@ def return_result():
             result = 'Server process completed, time:%.2f second' % usedTime
             return result
         else:
-            return '[INFO] Option 8 process failed'
+            return '[INFO] Option 7 process failed'
     else:
         print('No such option')
         return 'No such option'
