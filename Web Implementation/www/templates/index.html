@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>AIaaS Project Site</title>
+	<style>
+		.content {
+			max-width: 500px;
+			margin: auto;
+			padding: 10px;
+		}
+	</style>
+    </head>
+    <body>
+        <div class="content">
+		<h1>AIaas Project Site</h1>
+		<br>
+            <form method="post" action="http://3.128.198.35:5000/upload_image" enctype="multipart/form-data">
+               <input type="file"  value="Select Image" size="22" id="select_files" name="input_image" onchange="show_selectedImage()"/>
+               <br>
+	       <br>
+	       <label for="option">Choose a model:</label>
+	       <select id="select_files" name="option" onchange='checkOption(this.value)'>
+		       <option disabled selected value> -- select a model -- </option>
+		       <option value=1>Neutral Style Transfer</option>
+		       <option value=2>EAST Text Detector</option>
+		       <option value=3>Mask R-CNN</option>
+		       <option value=4>Age Detection</option>
+		       <option value=6>Blur Detection</option>
+		       <option value=7>Face Blurring</option>
+		</select>
+		<br>
+		<br>
+		<select id="select_style" name="style" style="display:none">
+			<option disabled selected value> -- select a style -- </option>
+			<option value="wave">Wave</option>
+                       <option value="candy">Candy</option>
+		       <option value="starry">Starry</option>
+                       <option value="composition">Composition</option>
+                       <option value="muse">La Muse</option>
+                       <option value="scream">The Scream</option>
+		       <option value="udnie">Udnie</option>
+		       <option value="mosaic">Mosaic</option>
+		       <option value="Feather">Feather</option>
+                </select>
+		<select id="select_method" name="method" style="display:none">
+                        <option disabled selected value> -- select a method -- </option>
+                        <option value="simple">Simple</option>
+                       <option value="pixelated">Pixelated</option>
+		</select>
+	       <br>
+               <input type="submit" class="button-new" value="Run Model" style="margin-top:15px;"/>
+               <canvas id="image_canvas" height="500" width="1020"></canvas>
+               <text name="image_className" value=""/>
+               <br>
+            </form>
+
+            <script type="text/javascript">
+                function show_selectedImage(){
+                    /// get select files.
+                    var selected_files = document.getElementById("select_files").files;
+                    for(var file of selected_files){
+                        console.log(file.webkitRelativePath);
+                        /// read file content.
+                        var reader = new FileReader();
+                        reader.readAsDataURL(file);
+                        reader.onloadend = function(){
+                            /// deal data.
+                            var img = new Image();
+                            /// after loader, result storage the file content result.
+                            img.src = this.result;
+                            img.onload = function(){
+                                var canvas = document.getElementById("image_canvas");
+                                var cxt = canvas.getContext('2d');
+                                cxt.drawImage(img, 0, 0);
+                            }
+                        }
+                    }
+                }
+
+		function checkOption(value) {
+			var element = document.getElementById("select_style");
+			if (value == 1) {
+				element.style.display="block";
+			} else {
+				element.style.display="none";
+			}
+
+			var method = document.getElementById("select_method");
+			if (value == 7) {
+				method.style.display="block";
+			} else {
+				method.style.display="none";
+			}
+		}
+            </script>
+        </div>
+    </body>
+</html>
+
